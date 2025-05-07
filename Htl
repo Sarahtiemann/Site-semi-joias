@@ -1,0 +1,31 @@
+Loja de Semi-Jóias :root { --branco: #ffffff; --bege: #f5f5dc; --marrom-claro: #d2b48c; --preto: #000000; } body { margin: 0; font-family: 'Helvetica Neue', sans-serif; background-color: var(--branco); color: var(--preto); } header { background-color: var(--branco); padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--bege); } header h1 { margin: 0; font-weight: 400; font-size: 24px; } nav a { margin: 0 15px; text-decoration: none; color: var(--preto); font-size: 16px; } .banner { background-color: var(--bege); text-align: center; padding: 60px 20px; } .banner h2 { font-size: 36px; margin-bottom: 20px; } .banner button { background-color: var(--marrom-claro); color: var(--branco); border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; } .produtos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 40px 20px; } .produto { border: 1px solid var(--bege); padding: 20px; text-align: center; } .produto button { margin-top: 10px; background-color: var(--marrom-claro); color: var(--branco); border: none; padding: 8px 16px; cursor: pointer; } .carrinho { padding: 20px; background-color: var(--bege); } .carrinho h3 { margin-top: 0; } .sobre { padding: 40px 20px; background-color: #f9f9f9; } footer { background-color: var(--bege); color: var(--preto); text-align: center; padding: 20px; margin-top: 40px; } Essência Semi-Jóias Início Coleção Sobre Carrinho Beleza com Essência Ver Coleção 
+
+Colar Dourado 
+
+R$ 129,90
+
+Adicionar ao Carrinho 
+
+Anel Minimalista 
+
+R$ 89,90
+
+Adicionar ao Carrinho 
+
+Pulseira Elegante 
+
+R$ 99,90
+
+Adicionar ao Carrinho 
+
+Seu Carrinho 
+
+Total: R$ 0.00
+
+Finalizar Pedido via WhatsApp Sobre a Essência 
+
+Somos uma marca de semi-jóias que valoriza a elegância e o estilo minimalista. Cada peça é cuidadosamente selecionada para refletir beleza, autenticidade e sofisticação. Acreditamos que o verdadeiro luxo está na simplicidade e nos detalhes.
+
+© 2025 Essência Semi-Jóias. Todos os direitos reservados.
+
+let carrinho = []; function adicionarProduto(nome, preco) { carrinho.push({ nome, preco }); atualizarCarrinho(); } function atualizarCarrinho() { const lista = document.getElementById('lista-carrinho'); const totalEl = document.getElementById('total'); const whatsappLink = document.getElementById('whatsapp-link'); lista.innerHTML = ''; let total = 0; let mensagem = 'Olá, gostaria de fazer um pedido:%0A'; carrinho.forEach(item => { const li = document.createElement('li'); li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`; lista.appendChild(li); total += item.preco; mensagem += `- ${item.nome} - R$ ${item.preco.toFixed(2)}%0A`; }); totalEl.textContent = total.toFixed(2); mensagem += `Total: R$ ${total.toFixed(2)}`; const telefone = 'SEUNUMERO'; // Substitua por seu número com DDD, ex: 5511999999999 whatsappLink.href = `https://wa.me/${telefone}?text=${mensagem}`; } 
